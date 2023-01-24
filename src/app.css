@@ -1,0 +1,46 @@
+/* --------------------------
+    Reset Default
+   --------------------------
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --------------------------
+    General Styling
+   --------------------------
+*/
+:root {
+  --color-text: hsl(0, 2%, 11%);
+  --color-bg: hsl(21, 30%, 91%);
+  --color-deco: hsl(21, 21%, 87%);
+  --color-scrollbar: hsl(20, 48%, 31%);
+
+  --font-family-primary: paralucent, sans-serif;
+  --font-family-secondary: quiroh, sans-serif;
+  --font-family-fallback: mr-eaves-xl-sans, sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  font-family: var(--font-family-primary);
+  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-fallback);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar);
+}
