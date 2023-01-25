@@ -179,6 +179,7 @@
     font-weight: bold;
     font-size: 5.75rem;
     line-height: 1;
+    font-family: var(--font-family-primary);
   }
 
   .content {
