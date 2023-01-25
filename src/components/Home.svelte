@@ -300,7 +300,7 @@
   }
 
   .item__caption-title {
-    font-family: var(--font-family-primary);
+    font-family: var(--font-family-secondary);
     font-weight: 400;
     font-size: 3rem;
     margin: 0;
@@ -308,6 +308,8 @@
 
   .item__caption-copy {
     margin: 0;
+    font-family: var(--font-family-fallback);
+    line-height: 1rem;
   }
 
   .item__caption-copy::before {
