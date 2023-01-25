@@ -1,7 +1,46 @@
 <script>
+  // @ts-nocheck
+
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import imagesLoaded from "imagesloaded";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline();
+  const preload = () => {
+    tl.to(".preloader__loader__inner", {
+      duration: 1,
+      delay: 1,
+      width: "100%",
+    })
+      .to(".preloader__content", {
+        duration: 1,
+        opacity: 0,
+      })
+      .to(".preloader", {
+        duration: 1.4,
+        y: "-100vh",
+      });
+  };
+
+  const preloadBody = () => {
+    document.body.style.opacity = 1;
+  };
+
+  imagesLoaded(document.querySelector("body"), function (instance) {
+    preloadBody();
+    preload();
+  });
 </script>
 
 <main>
+  <div class="preloader">
+    <div class="preloader__content">
+      <div class="preloader__text">The Observer</div>
+    </div>
+  </div>
+
   <div class="content">
     <div class="item">
       <div class="item__img-wrap">
@@ -118,6 +157,30 @@
 </main>
 
 <style>
+  .preloader {
+    position: fixed;
+    z-index: 40;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-scrollbar);
+    color: var(--color-bg);
+  }
+
+  .preloader__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .preloader__text {
+    font-weight: bold;
+    font-size: 5.75rem;
+    line-height: 1;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
@@ -135,7 +198,7 @@
   }
 
   .item::before {
-    counter-reset: figure;
+    counter-increment: figure;
     content: counter(figure, decimal-leading-zero);
     position: absolute;
     font-family: var(--font-family-primary);
