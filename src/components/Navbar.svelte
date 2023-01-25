@@ -6,7 +6,7 @@
     <h1 class="navbar__title">The Observer</h1>
   </div>
   <div class="navbar__links">
-    <a href="https://github.com/Neon-Coders/the-observer">GitHub</a>
+<!--     <a href="https://github.com/Neon-Coders/the-observer">GitHub</a> -->
   </div>
 </div>
 
